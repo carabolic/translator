@@ -1,0 +1,6 @@
+Welcome to the translator project.
+
+Developing with Eclipse:
+1.	git clone git://github.com/carabolic/translator.git
+2.	mvn eclipse:eclipse
+3.	import project into eclipse
