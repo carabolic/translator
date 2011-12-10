@@ -1,0 +1,17 @@
+# maven specific #
+target/
+
+# java specific #
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+
+# eclipse IDE specific #
+*.project
+*.classpath
+
+# intelliJ IDE specific #
+*.idea
