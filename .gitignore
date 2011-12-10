@@ -12,6 +12,7 @@ target/
 # eclipse IDE specific #
 *.project
 *.classpath
+*.settings
 
 # intelliJ IDE specific #
 *.idea
