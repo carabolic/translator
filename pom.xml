@@ -23,6 +23,12 @@
   </repositories>
 
   <dependencies>
+  	<dependency>
+ 		<groupId>de.tu-berlin.textmining</groupId>
+  		<artifactId>translator-prototypes</artifactId>
+ 		<version>0.0.1</version>
+    </dependency>
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -59,7 +65,8 @@
     <plugins>
       <plugin>
         <groupId>org.mortbay.jetty</groupId>
-    	<artifactId>jetty-maven-plugin</artifactId>
+        <artifactId>maven-jetty-plugin</artifactId>
+        <version>6.1.10</version>
       </plugin>
     </plugins>
   </build>
