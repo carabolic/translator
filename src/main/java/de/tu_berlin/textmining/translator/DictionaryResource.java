@@ -53,9 +53,9 @@ public class DictionaryResource {
 	
 	@Path("translate")
 	@GET
-	@Produces("text/plain")
+	@Produces("application/json")
 	public String translate(@DefaultValue("") @QueryParam("q") final String sentence) {
 		LOGGER.debug("Got query q=" + sentence);
-		return this.translator.translateSentence(sentence);
+		return "{\"translation\":\"" + this.translator.translateSentence(sentence) + "\"}";
 	}
 }

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="jquery_plugins.js"></script>
+		<script type="text/javascript">
+		function translate(sentence) {
+			$.ajax({
+				url: "rest/translator/translate",
+				data: {q:sentence},
+  				dataType: 'json',
+				success: function(result){
+					refreshOutput(result.translation);
+				}
+			});
+		}
+		
+		function refreshOutput(output) {
+			$("#output").val(output);
+		}
+		
+		$(document).ready(function() {
+			$("#btnTrans").click(function() {
+				translate($("#input").val());
+			});
+			$("#input").keypress(function(event){
+				if (event.which == 32 || event.which == 13) {
+					translate($("#input").val());	
+				}
+			});
+			$("#input").bindWithDelay("keyup", function(){
+				translate($("#input").val());
+			}, 600);
+		});
+		</script>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>Translator</title>
+	</head>
+	<body>
+		<div id="header">
+			<h1>Translator</h1>
+			<p>Christoph Brücke, Christian Fischer, Robert Schulz</p>
+		</div>
+		<div id="content">
+			<textarea id="input" name="input" cols="50" rows="10"></textarea>
+			<textarea id="output" name="output" cols="50" rows="10"></textarea>
+			<br />
+			<button id="btnTrans" type="submit" text="Translate">Translate</button>
+		</div>
+	</body>
+</html>
